@@ -2,16 +2,17 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Offers from "./containers/Offers";
 import Home from "./containers/Home";
-
+import Offer from "./containers/Offer";
 function App() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState([{}]);
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("https://vinted-will.herokuapp.com/");
+      const response = await axios.get(
+        "https://vinted-will.herokuapp.com/offers"
+      );
       setData(response.data);
       setIsLoading(false);
     } catch (error) {
@@ -22,15 +23,14 @@ function App() {
   useEffect(() => {
     fetchData();
   }, []);
-
   return (
     <Router>
       <Switch>
         <Route path="/items">
-          <Offers />
+          <Offer />
         </Route>
-        <Route>
-          <Home path="/" />
+        <Route path="/">
+          <Home data={data} isLoading={isLoading} />
         </Route>
       </Switch>
     </Router>

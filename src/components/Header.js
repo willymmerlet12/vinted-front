@@ -8,7 +8,9 @@ const Header = ({ token, setUser }) => {
     <div>
       <div className="header-container">
         <div>
-          <img className="header-logo" src={Logo} alt="logo" />
+          <Link to="/">
+            <img className="header-logo" src={Logo} alt="logo" />
+          </Link>
         </div>
         <div className="search-cont">
           <input

@@ -7,6 +7,7 @@ import Offer from "./containers/Offer";
 import Header from "./components/Header";
 import Signup from "./containers/Signup";
 import Login from "./containers/Login";
+
 import Cookie from "js-cookie";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -28,6 +29,7 @@ function App() {
   return (
     <Router>
       <Header token={token} setUser={setUser} />
+
       <Switch>
         <Route path="/items/:id">
           <Offer />

@@ -7,19 +7,29 @@ const Offers = ({ data, isLoading }) => {
     <span>en cours de chargement</span>
   ) : (
     <>
-      {data.offers.map((item, id) => {
-        return (
-          <div key={id}>
-            <p>{item.owner.account.username}</p>
-            <Link to={`/items/${item._id}`}>
-              <img src={item.product_image.secure_url} alt="" />
-              <p>{item.product_price}€</p>
-              <p>{item.product_details[1].TAILLE}</p>
-              <p>{item.product_details[0].MARQUE}</p>
-            </Link>
-          </div>
-        );
-      })}
+      <div className="home-card-wrapper">
+        {data.offers.map((item, id) => {
+          return (
+            <div key={id}>
+              <div className="card-container">
+                <div className="card-avatar-username">
+                  <span>{item.owner.account.username}</span>
+                </div>
+                <Link to={`/items/${item._id}`}>
+                  <div>
+                    <img src={item.product_image.secure_url} alt="" />
+                    <div className="card-price-brand-size">
+                      <span>{item.product_price} €</span>
+                      <span>{item.product_details[1].TAILLE}</span>
+                      <span>{item.product_details[0].MARQUE}</span>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };

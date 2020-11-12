@@ -61,35 +61,26 @@ input {
   color: #bbb;
 }
 .button-signup {
-  width: 115px;
-  height: 30px;
-  border: 1px solid #2cb1ba;
-  border-radius: 5px;
-  font-size: 12px;
-  outline: none;
-  background-color: #fff;
-  color: #2cb1ba;
   margin-right: 20px;
 }
-.button-login {
-  width: 115px;
-  height: 30px;
-  border: 1px solid #2cb1ba;
-  border-radius: 5px;
-  font-size: 12px;
-  outline: none;
+.button-login-signup {
   background-color: #fff;
   color: #2cb1ba;
+  margin-bottom: 20px;
 }
-.button-sold {
-  width: 115px;
+.header-button {
   height: 30px;
+  width: 115px;
   border: 1px solid #2cb1ba;
   border-radius: 5px;
+  font-family: "Maison Neue";
   font-size: 12px;
   outline: none;
+}
+.button-sold {
   background-color: #2cb1ba;
   color: #fff;
+  margin-bottom: 5px;
 }
 button {
   appearance: button;
@@ -103,8 +94,6 @@ button {
   display: inline-block;
   text-align: center;
   align-items: flex-start;
-  cursor: pointer;
-  margin-bottom: 15px;
 }
 .home-hero-bg img {
   background-image: url(/static/media/vint.jpg);
@@ -139,7 +128,10 @@ button {
   width: 275px;
   margin: auto;
 }
-
+button,
+input {
+  outline: none;
+}
 .signup-form button {
   background-color: #2cb1ba;
   height: 45px;
@@ -208,4 +200,43 @@ a {
 .signup-container a {
   color: #2cb1ba;
   font-size: 15px;
+}
+/* HOME PAGE */
+.home-card-wrapper {
+  width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto auto;
+}
+.card-container {
+  width: 235px;
+  padding: 0 6px 16px;
+  cursor: pointer;
+}
+.card-avatar-username > span {
+  color: #999;
+  font-size: 14px;
+}
+.card-container div:last-child img {
+  height: 360px;
+  width: 235px;
+  object-fit: fill;
+}
+.card-avatar-username {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.card-price-brand-size {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+.card-price-brand-size span:first-child {
+  font-size: 14px;
+  color: black;
+}
+.card-price-brand-size span:not(:first-child) {
+  font-size: 12px;
+  color: #999;
 }

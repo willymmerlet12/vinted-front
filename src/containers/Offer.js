@@ -25,7 +25,6 @@ const Offer = () => {
       <img src={data.product_image.secure_url} alt="offer img" />
       {data.product_details.map((elem, index) => {
         const keys = Object.keys(elem);
-
         return (
           <p key={index}>
             {keys[0]} : {elem[keys[0]]}

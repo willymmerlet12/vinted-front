@@ -33,7 +33,9 @@ const Header = ({ token, setUser }) => {
             <Link to="/signup">
               <button className="button-signup">S'inscrire</button>
             </Link>
-            <button className="button-login">Se connecter</button>
+            <Link to="/login">
+              <button className="button-login">Se connecter</button>
+            </Link>
           </>
         )}
         <button className="button-sold">Vend tes articles</button>

@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-const Signup = ({ setUser, token }) => {
+const Signup = ({ setUser }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const history = useHistory();
 
   const handleSubmit = (event) => {
@@ -15,6 +16,7 @@ const Signup = ({ setUser, token }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
+        <h1>S'inscrire</h1>
         <input
           type="text"
           name="username"
@@ -58,9 +60,9 @@ const Signup = ({ setUser, token }) => {
                 password: password,
               }
             );
-            const token = { token };
-            setUser(token);
-            console.log(response);
+
+            setUser(response.data.token);
+            history.push("/");
           }}
         >
           S'inscrire

@@ -1,36 +1,45 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import axios from "axios";
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./containers/Home";
 import Offer from "./containers/Offer";
-function App() {
-  const [data, setData] = useState([{}]);
-  const [isLoading, setIsLoading] = useState(true);
+import Header from "./components/Header";
+import Signup from "./containers/Signup";
+import Login from "./containers/Login";
+import Cookie from "js-cookie";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+library.add(faSearch);
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        "https://vinted-will.herokuapp.com/offers"
-      );
-      setData(response.data);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error.message);
+function App() {
+  const [token, setToken] = useState(Cookie.get("userToken") || null);
+
+  const setUser = (tokenToSet) => {
+    if (tokenToSet) {
+      Cookie.set("userToken", tokenToSet);
+      setToken(tokenToSet);
+    } else {
+      Cookie.remove("userToken");
+      setToken(null);
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
   return (
     <Router>
+      <Header token={token} setUser={setUser} />
       <Switch>
-        <Route path="/items">
+        <Route path="/items/:id">
           <Offer />
         </Route>
+        <Route path="/signup">
+          <Signup setUser={setUser} />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
         <Route path="/">
-          <Home data={data} isLoading={isLoading} />
+          <Home />
         </Route>
       </Switch>
     </Router>

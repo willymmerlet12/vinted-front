@@ -1,1 +1,136 @@
 /* Other rules */
+body {
+  margin: 0;
+}
+/* HEADER */
+div {
+  display: block;
+}
+.container {
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1280px;
+  margin: auto;
+  padding: 10px 0;
+}
+.header-container > div:first-child,
+.header-logo {
+  cursor: pointer;
+}
+.header-logo {
+  height: 30px;
+  padding-bottom: 15px;
+}
+
+.search-cont {
+  position: relative;
+}
+.search-input {
+  font-family: "Maison Neue";
+  width: 590px;
+  padding-left: 40px;
+  background-color: #f5f6f7;
+  border-radius: 5px;
+  height: 37px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+input {
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: textfield;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+}
+.search-icon {
+  position: relative;
+  left: 7px;
+  top: -27px;
+  color: #bbb;
+}
+.button-signup {
+  width: 115px;
+  height: 30px;
+  border: 1px solid #2cb1ba;
+  border-radius: 5px;
+  font-size: 12px;
+  outline: none;
+  background-color: #fff;
+  color: #2cb1ba;
+  margin-right: 20px;
+}
+.button-login {
+  width: 115px;
+  height: 30px;
+  border: 1px solid #2cb1ba;
+  border-radius: 5px;
+  font-size: 12px;
+  outline: none;
+  background-color: #fff;
+  color: #2cb1ba;
+}
+.button-sold {
+  width: 115px;
+  height: 30px;
+  border: 1px solid #2cb1ba;
+  border-radius: 5px;
+  font-size: 12px;
+  outline: none;
+  background-color: #2cb1ba;
+  color: #fff;
+}
+button {
+  appearance: button;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.home-hero-bg img {
+  background-image: url(/static/media/vint.jpg);
+  height: 455px;
+  width: 100%;
+  position: relative;
+  background-position: 50%;
+  background-position-x: 50%;
+  background-position-y: center;
+  background-size: cover;
+  object-fit: cover;
+}
+.home-hero-forme {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 80px;
+  pointer-events: none;
+}
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+form input {
+  margin-bottom: 10px;
+}

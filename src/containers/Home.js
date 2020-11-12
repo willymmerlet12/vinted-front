@@ -1,13 +1,30 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Offers from "../components/offers";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Offers from "../components/Offers";
+import Dis from "../components/Dis";
 
-const Home = ({ data, isLoading }) => {
+const Home = () => {
+  const [data, setData] = useState([{}]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        "https://vinted-will.herokuapp.com/offers"
+      );
+      setData(response.data);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
-    <div>
-      <h1>Home</h1>
-      <Link to="/items">Offer</Link>
-
+    <div className="container">
+      <Dis />
       <Offers data={data} isLoading={isLoading} />
     </div>
   );

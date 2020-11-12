@@ -208,6 +208,36 @@ a {
   flex-wrap: wrap;
   margin: 30px auto auto;
 }
+.home-hero-bg-img > div {
+  width: 1280px;
+  margin: auto;
+}
+.home-hero-pret {
+  height: 220px;
+  width: 360px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 3px;
+  font-size: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 150px;
+  left: 2%;
+  box-shadow: 0 0 2px rgba(17, 17, 17, 0.24);
+}
+.home-hero-pret button {
+  height: 45px;
+  width: 187px;
+  background-color: #2baeb7;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 0 14px;
+  margin-top: 32px;
+}
 .card-container {
   width: 235px;
   padding: 0 6px 16px;

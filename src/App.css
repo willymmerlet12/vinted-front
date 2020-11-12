@@ -39,7 +39,6 @@ div {
   font-size: 16px;
 }
 input {
-  -webkit-writing-mode: horizontal-tb !important;
   text-rendering: auto;
   color: -internal-light-dark(black, white);
   letter-spacing: normal;
@@ -84,7 +83,6 @@ input {
 }
 button {
   appearance: button;
-  -webkit-writing-mode: horizontal-tb !important;
   text-rendering: auto;
   letter-spacing: normal;
   word-spacing: normal;
@@ -96,7 +94,6 @@ button {
   align-items: flex-start;
 }
 .home-hero-bg img {
-  background-image: url(/static/media/vint.jpg);
   height: 455px;
   width: 100%;
   position: relative;

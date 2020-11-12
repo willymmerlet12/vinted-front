@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Offers from "../components/Offers";
+import Offers from "../components/offers";
 import Dis from "../components/Dis";
 
 const Home = () => {

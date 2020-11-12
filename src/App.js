@@ -13,7 +13,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 library.add(faSearch);
 
-function App() {
+function App({ data }) {
   const [token, setToken] = useState(Cookie.get("userToken") || null);
 
   const setUser = (tokenToSet) => {
@@ -41,7 +41,7 @@ function App() {
           <Login setUser={setUser} />
         </Route>
         <Route path="/">
-          <Home />
+          <Home data={data} />
         </Route>
       </Switch>
     </Router>

@@ -21,16 +21,49 @@ const Offer = () => {
     <p>en cours de chargement</p>
   ) : (
     <div>
-      <p>{data.product_name}</p>
-      <img src={data.product_image.secure_url} alt="offer img" />
-      {data.product_details.map((elem, index) => {
-        const keys = Object.keys(elem);
-        return (
-          <p key={index}>
-            {keys[0]} : {elem[keys[0]]}
-          </p>
-        );
-      })}
+      <div className="body-offer">
+        <div className="offer-container">
+          <div>
+            <img
+              className="offer-img"
+              src={data.product_image.secure_url}
+              alt="offer img"
+            />
+          </div>
+          <div className="info-offer">
+            <div>
+              <span className="price-offer">{data.product_price} €</span>
+              {data.product_details.map((elem, index) => {
+                const keys = Object.keys(elem);
+                return (
+                  <>
+                    <ul className="offer-desc">
+                      <li>
+                        <span key={index}>{keys[0]}</span>
+                        <span> {elem[keys[0]]} </span>
+                      </li>
+                    </ul>
+                  </>
+                );
+              })}
+              <div className="separator"></div>
+              <div className="offer-info2">
+                <p className="name">{data.product_name}</p>
+                <p className="descc">{data.product_description}</p>
+                <span>
+                  <img
+                    className="avat"
+                    src={data.owner.account.avatar.secure_url}
+                    alt=""
+                  />
+                  <span>{data.owner.account.username}</span>
+                </span>
+              </div>
+            </div>
+            <button>Acheter</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

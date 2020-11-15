@@ -13,7 +13,14 @@ const Offers = ({ data, isLoading }) => {
             <div key={id}>
               <div className="card-container">
                 <div className="card-avatar-username">
-                  <span>{item.owner.account.username}</span>
+                  <span>
+                    <img
+                      src={item.owner.account.avatar.secure_url}
+                      alt="avatar pic"
+                      className="avat"
+                    />
+                    <span>{item.owner.account.username}</span>
+                  </span>
                 </div>
                 <Link to={`/items/${item._id}`}>
                   <div>

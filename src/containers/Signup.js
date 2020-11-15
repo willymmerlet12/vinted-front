@@ -45,6 +45,7 @@ const Signup = ({ setUser }) => {
             }}
             placeholder="Mot de passe"
           />
+
           <div className="checkbox-container">
             <input type="checkbox" />
             <span>S'inscrire à notre newsletter</span>

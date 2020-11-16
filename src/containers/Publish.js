@@ -23,35 +23,39 @@ const Publish = ({ token }) => {
   formData.append("color", color);
   formData.append("condition", condition);
   formData.append("city", city);
-  formData.append("price", price);
+  formData.append("price", Number(price));
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    try {
+      event.preventDefault();
 
-    if (
-      title &&
-      price &&
-      file &&
-      description &&
-      brand &&
-      size &&
-      color &&
-      condition &&
-      city
-    ) {
-      const response = await axios.post(
-        "https://vinted-will.herokuapp.com/offer/publish",
-        formData,
-        {
-          headers: {
-            authorization: "Bearer " + token,
-          },
-        }
-      );
-      console.log(response.data);
-      history.push("/");
-    } else {
-      alert("missig informations!!");
+      if (
+        title &&
+        price &&
+        file &&
+        description &&
+        brand &&
+        size &&
+        color &&
+        condition &&
+        city
+      ) {
+        const response = await axios.post(
+          "https://vinted-will.herokuapp.com/offer/publish",
+          formData,
+          {
+            headers: {
+              authorization: "Bearer " + token,
+            },
+          }
+        );
+        console.log(response.data);
+        history.push("/");
+      } else {
+        alert("missig informations!!");
+      }
+    } catch (error) {
+      console.log(error.response);
     }
   };
   return (
@@ -165,7 +169,7 @@ const Publish = ({ token }) => {
                 type="text"
                 name="price"
                 value={price}
-                placeholder="ex: 20.99 €"
+                placeholder="ex: 20.99"
                 onChange={(event) => {
                   setPrice(event.target.value);
                 }}

@@ -27,34 +27,31 @@ const Publish = ({ token }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      if (
-        title &&
-        price &&
-        file &&
-        description &&
-        brand &&
-        size &&
-        color &&
-        condition &&
-        city
-      ) {
-        const response = await axios.post(
-          "https://vinted-will.herokuapp.com/offer/publish",
-          formData,
-          {
-            headers: {
-              authorization: "Bearer" + token,
-            },
-          }
-        );
-        console.log(response.data);
-        history.push("/");
-      } else {
-        alert("missig informations!!");
-      }
-    } catch (error) {
-      console.log(error.message);
+
+    if (
+      title &&
+      price &&
+      file &&
+      description &&
+      brand &&
+      size &&
+      color &&
+      condition &&
+      city
+    ) {
+      const response = await axios.post(
+        "https://vinted-will.herokuapp.com/offer/publish",
+        formData,
+        {
+          headers: {
+            authorization: "Bearer " + token,
+          },
+        }
+      );
+      console.log(response.data);
+      history.push("/");
+    } else {
+      alert("missig informations!!");
     }
   };
   return (

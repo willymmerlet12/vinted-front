@@ -83,7 +83,7 @@ input {
 .button-sold {
   background-color: #2cb1ba;
   color: #fff;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 button {
   appearance: button;
@@ -288,6 +288,7 @@ a {
 }
 .offer-img {
   height: 600px;
+  max-width: 700px;
   object-fit: cover;
   border-radius: 10px;
 }

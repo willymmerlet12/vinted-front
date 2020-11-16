@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../img/vinted.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Header = ({ token, setUser }) => {
+const Header = ({
+  token,
+  setUser,
+  setSearch,
+  setSearchInput,
+  searchInput,
+  search,
+}) => {
+  const handleChange = (event) => {
+    setSearchInput(event.target.value);
+  };
+
   return (
     <div>
       <nav>
@@ -13,16 +24,20 @@ const Header = ({ token, setUser }) => {
               <img className="header-logo" src={Logo} alt="logo" />
             </Link>
           </div>
+
           <div className="search-cont">
             <input
               type="text"
               placeholder="Recherche des articles"
               className="search-input"
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
             />
             <div className="search-icon">
               <FontAwesomeIcon icon="search" />
             </div>
           </div>
+
           {token ? (
             <button
               onClick={() => {
@@ -45,9 +60,11 @@ const Header = ({ token, setUser }) => {
               </Link>
             </>
           )}
-          <button className="header-button button-sold">
-            Vend tes articles
-          </button>
+          <Link to="/publish">
+            <button className="header-button button-sold">
+              Vend tes articles
+            </button>
+          </Link>
         </div>
       </nav>
     </div>

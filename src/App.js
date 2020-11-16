@@ -46,7 +46,7 @@ function App({ handleChange, data }) {
 
       <Switch>
         <Route exact path="/publish">
-          {!token ? <Redirect to="/login" /> : <Publish />}
+          {!token ? <Redirect to="/login" /> : <Publish token={token} />}
         </Route>
         <Route path="/items/:id">
           <Offer />

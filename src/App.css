@@ -358,3 +358,9 @@ a {
   border-radius: 20px;
   margin-right: 10px;
 }
+/* PUBLISH */
+.form-pub {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

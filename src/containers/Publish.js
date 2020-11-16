@@ -20,7 +20,7 @@ const Publish = () => {
       formData
     );
   };
-  return token ? (
+  return (
     <div>
       <form onSubmit={handleSubmit}>
         <input
@@ -33,8 +33,6 @@ const Publish = () => {
         <input type="text" />
       </form>
     </div>
-  ) : (
-    history.push("/login")
   );
 };
 

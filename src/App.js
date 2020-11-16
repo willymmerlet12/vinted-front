@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import "./App.css";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Home from "./containers/Home";
 import Offer from "./containers/Offer";
 import Header from "./components/Header";
@@ -40,8 +45,8 @@ function App({ handleChange, data }) {
       />
 
       <Switch>
-        <Route path="/publish">
-          <Publish />
+        <Route exact path="/publish">
+          {!token ? <Redirect to="/login" /> : <Publish />}
         </Route>
         <Route path="/items/:id">
           <Offer />

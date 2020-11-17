@@ -17,6 +17,7 @@ import Publish from "./containers/Publish";
 import Cookie from "js-cookie";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import Paiment from "./containers/Paiment";
 library.add(faSearch);
 
 function App({ handleChange, data }) {
@@ -50,6 +51,9 @@ function App({ handleChange, data }) {
         </Route>
         <Route path="/items/:id">
           <Offer />
+        </Route>
+        <Route path="/paiment">
+          {!token ? <Redirect to="/login" /> : <Paiment />}
         </Route>
         <Route path="/signup">
           <Signup setUser={setUser} />

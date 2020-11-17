@@ -43,6 +43,7 @@ const Header = ({
               onClick={() => {
                 setUser(null);
               }}
+              className="header-button deco-button"
             >
               Se déconnecter
             </button>

@@ -27,7 +27,7 @@ const Paiment = ({}) => {
                   <span>{amount} €</span>
                 </li>
                 <li>
-                  Frais rotection acheteurs
+                  Frais protection acheteurs
                   <span>0.40 €</span>
                 </li>
                 <li>
@@ -41,16 +41,16 @@ const Paiment = ({}) => {
               <ul>
                 <li>
                   Total
-                  <span>{total} </span>
+                  <span>{total} €</span>
                 </li>
               </ul>
             </div>
             <div classname="pay-card">
               <div className="content">
                 <p>
-                  Il ne vous reste plus qu'un étape pour vous offrir{" "}
-                  <span className="bold">{title}</span>. Vous allez payer{" "}
-                  <span className="bold">{total} € </span>
+                  Il ne vous reste plus qu'un étape pour vous offrir
+                  <span className="bold"> {title}</span>. Vous allez payer
+                  <span className="bold"> {total} € </span>
                   (frais de protection et frais de port inclus).
                 </p>
                 <div className="divide"></div>

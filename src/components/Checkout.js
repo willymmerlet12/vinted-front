@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
-import { useLocation } from "react-router-dom";
 
 const Checkout = ({ price, name }) => {
-  const location = useLocation();
-
   const stripe = useStripe();
   const elements = useElements();
   const [succeed, setSucceed] = useState(false);
@@ -40,10 +37,13 @@ const Checkout = ({ price, name }) => {
   return (
     <>
       {succeed ? (
-        <p>succeeded</p>
+        <p className="pay-done">
+          Votre payment a bie été reçu! vous allez recevoir un email de
+          comfirmation. Merci pour votre achat et la bonne journée.
+        </p>
       ) : (
         <form onSubmit={handleSubmit}>
-          <div className="card-pay">
+          <div className="pay-card">
             <CardElement />
           </div>
           <button type="submit">Valider</button>

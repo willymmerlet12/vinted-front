@@ -554,14 +554,15 @@ input[type="checkbox" i] {
 .pay-cont {
   width: 600px;
   margin: 0 auto;
-  padding: 36px 20px;
+  padding: 26px 20px;
 }
 .pay-card {
   background-color: #fff;
+  border-radius: 5px;
 }
 .pay-title {
   display: block;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 18px;
   color: #999;
   padding: 24px 24px 8px;
@@ -602,4 +603,41 @@ ul {
 }
 .pay-card .content .bold {
   font-weight: 700;
+}
+.pay-card button {
+  margin-left: 120px;
+  margin-top: 16px;
+  display: block;
+  width: 60%;
+  font-size: 16px;
+  line-height: 22px;
+  height: 44px;
+  padding: 0 14px;
+  color: #fff;
+  border: 1px solid;
+  border-radius: 4px;
+  background: #00c06d;
+  border-color: #00c06d;
+}
+.stripe-card {
+  display: block;
+  margin: 10px 0 20px;
+  padding: 10px 14px;
+  font-size: 1em;
+  font-family: "Source Code Pro", monospace;
+  box-shadow: 0 1px 3px rgba(50, 50, 93, 0.14902),
+    0 1px 0 rgba(0, 0, 0, 0.0196078);
+  border: 1px solid black;
+  outline: 0;
+  border-radius: 4px;
+  background: #fff;
+}
+.pay-done {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: green;
+  font-size: 20px;
+  margin-left: 20px;
+  padding-bottom: 10px;
 }

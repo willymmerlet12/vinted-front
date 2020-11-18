@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import "./assets/fonts/stylesheet.css";
 
 import {
   BrowserRouter as Router,

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import UserLogo from "../img/user-logo.jpg";
 
 const Offer = ({ token }) => {
   const { id } = useParams();
@@ -52,11 +53,15 @@ const Offer = ({ token }) => {
                 <p className="name">{data.product_name}</p>
                 <p className="descc">{data.product_description}</p>
                 <span>
-                  <img
-                    className="avat"
-                    src={data.owner.account.avatar.secure_url}
-                    alt=""
-                  />
+                  {data.owner.account.avatar ? (
+                    <img
+                      className="avat"
+                      src={data.owner.account.avatar.secure_url}
+                      alt=""
+                    />
+                  ) : (
+                    <img src={UserLogo} alt="" className="avat" />
+                  )}
                   <span>{data.owner.account.username}</span>
                 </span>
               </div>

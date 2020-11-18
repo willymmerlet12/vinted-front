@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import UserLogo from "../img/user-logo.jpg";
 
 const Offers = ({ data, isLoading }) => {
   console.log(data);
@@ -14,11 +15,15 @@ const Offers = ({ data, isLoading }) => {
               <div className="card-container">
                 <div className="card-avatar-username">
                   <span>
-                    <img
-                      src={item.owner.account.avatar.secure_url}
-                      alt="avatar pic"
-                      className="avat"
-                    />
+                    {item.owner.account.avatar ? (
+                      <img
+                        src={item.owner.account.avatar.secure_url}
+                        alt="avatar pic"
+                        className="avat"
+                      />
+                    ) : (
+                      <img src={UserLogo} alt="" className="avat" />
+                    )}
                     <span>{item.owner.account.username}</span>
                   </span>
                 </div>

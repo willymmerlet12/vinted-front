@@ -6,6 +6,7 @@ const Signup = ({ setUser }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  let ee;
 
   const history = useHistory();
 

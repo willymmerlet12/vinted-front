@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
+  const location = useLocation();
+
+  const fromPublish = location.state?.fromPublish ? true : false;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -45,9 +48,12 @@ const Login = ({ setUser }) => {
                   password: password,
                 }
               );
-
-              setUser(response.data.token);
-              history.push("/");
+              if (response.data.token) {
+                setUser(response.data.token);
+                history.push(fromPublish ? "/publish" : "/");
+              } else {
+                alert("Une erreur est survenue");
+              }
             }}
           >
             Se connecter

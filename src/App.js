@@ -50,10 +50,10 @@ function App({ handleChange, data }) {
           {!token ? <Redirect to="/login" /> : <Publish token={token} />}
         </Route>
         <Route path="/items/:id">
-          <Offer />
+          <Offer token={token} />
         </Route>
         <Route path="/paiment">
-          {!token ? <Redirect to="/login" /> : <Paiment />}
+          {!token ? <Redirect to="/login" /> : <Paiment token={token} />}
         </Route>
         <Route path="/signup">
           <Signup setUser={setUser} />
@@ -62,7 +62,7 @@ function App({ handleChange, data }) {
           <Login setUser={setUser} />
         </Route>
         <Route path="/">
-          <Home data={data} />
+          <Home data={data} token={token} />
         </Route>
       </Switch>
     </Router>

@@ -422,7 +422,9 @@ a {
 .input-sign {
   font-size: 40px;
 }
-
+.input-file1 {
+  display: none;
+}
 .input-file {
   display: none;
 }

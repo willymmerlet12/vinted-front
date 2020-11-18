@@ -12,7 +12,7 @@ const Paiment = ({}) => {
   const location = useLocation();
   const title = location.state.title;
   const amount = location.state.amount;
-  const total = Number(amount + 0.4 + 0.8).toFixed(2);
+  const total = Number(amount + amount * 0.01 + amount * 0.02).toFixed(2);
 
   return (
     <>
@@ -28,11 +28,11 @@ const Paiment = ({}) => {
                 </li>
                 <li>
                   Frais protection acheteurs
-                  <span>0.40 €</span>
+                  <span>{amount * 0.01}€</span>
                 </li>
                 <li>
                   Frais de port
-                  <span>0.80 € </span>
+                  <span>{amount * 0.02}€ </span>
                 </li>
               </ul>
             </div>

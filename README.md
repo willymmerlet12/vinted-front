@@ -1,6 +1,6 @@
 # Vinted front-end replica made with react
 
-![yo](https://j.gifs.com/AN0wxj.gif)
+![ ](https://j.gifs.com/AN0wxj.gif)
 
 ## Packages Used
 

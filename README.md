@@ -1,6 +1,6 @@
 # Vinted front-end replica made with react
 
-![ ](gif.gif)
+!https://j.gifs.com/AN0wxj.gif
 
 ## Installation
 

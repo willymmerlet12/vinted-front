@@ -2,6 +2,20 @@
 
 ![ ](https://j.gifs.com/AN0wxj.gif)
 
+## Installation
+
+to install all dependencies run :
+
+```js
+yarn;
+```
+
+to launch :
+
+```js
+yarn start
+```
+
 ## Packages Used
 
 1. [Axios](https://www.npmjs.com/package/axios)

@@ -1,4 +1,4 @@
-[ ](https://gifs.com/gif/vinted-AN0wxj)
+[ ](https://j.gifs.com/AN0wxj.gif)
 
 # Vinted front-end replica made with react
 

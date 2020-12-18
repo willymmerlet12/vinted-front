@@ -1,16 +1,16 @@
 # Vinted front-end replica made with react
 
-![ ](https://j.gifs.com/AN0wxj.gif)
+![ ](gif.gif)
 
 ## Installation
 
-to install all dependencies run :
+To install all dependencies run :
 
 ```js
 yarn;
 ```
 
-to launch :
+To launch :
 
 ```js
 yarn start

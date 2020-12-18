@@ -26,4 +26,4 @@ yarn start
 
 ## Netlify link
 
-use this link to use my project and enjoy the fludity of it: (https://vinted.netlify.app/)
+Use this link to use my project and enjoy the fludity of it: https://vinted.netlify.app/

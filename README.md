@@ -23,3 +23,7 @@ yarn start
 3. [React](https://reactjs.org/)
 4. [React-Router-Dom](https://reactrouter.com/web/guides/quick-start)
 5. [js-cookie](https://www.npmjs.com/package/js-cookie)
+
+## Netlify link
+
+use this link to use my project and enjoy the fludity of it: (https://vinted.netlify.app/)
